@@ -1,73 +1,63 @@
-# Welcome to your Lovable project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/e51cd692-7b41-488f-a050-391a3f2af768
+# Doctor Directory Web App
 
-## How can I edit this code?
+A responsive and fully client-side searchable, filterable, and sortable doctor directory. This project fetches data from a mock API and allows users to search for doctors, apply multiple filters, and sort results. URL query parameters are maintained to ensure back/forward browser navigation retains state.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Autocomplete Search**
+  - Search by doctor name.
+  - Shows top 3 suggestions.
+  - Press Enter or click suggestion to filter list.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e51cd692-7b41-488f-a050-391a3f2af768) and start prompting.
+- **Filter Panel**
+  - **Consultation Type**: Single-select radio (Video Consult, In Clinic).
+  - **Specialties**: Multi-select checkboxes (General Physician, Dermatologist, etc.).
+  - **Sort Options**: 
+    - Fees (ascending).
+    - Experience (descending).
+    
+- **Doctor List**
+  - Shows name, specialty, experience, and consultation fee.
+  - Rendered dynamically from API.
+  
+- **Client-side Filtering**
+  - All search, filter, and sort logic handled on the client.
+  - Query parameters reflect current filters.
+  - Browser navigation retains state.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech Stack
 
-**Use your preferred IDE**
+- HTML, CSS (Vanilla/Bootstrap)
+- JavaScript (Vanilla JS)
+- [Mock API](https://srijandubey.github.io/campus-api-mock/SRM-C1-25.json)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## How to Run
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone or download the repository.
+2. Open `index.html` in any browser.
+3. Start searching and filtering doctors!
 
-Follow these steps:
+## Folder Structure
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+doctor-directory/
+├── index.html
+├── style.css
+├── script.js
+└── README.md
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## `data-testid` Support
 
-# Step 3: Install the necessary dependencies.
-npm i
+Test automation supported via specific `data-testid` attributes for every interactive element:
+- `autocomplete-input`, `suggestion-item`, `doctor-card`, `filter-video-consult`, `filter-specialty-*`, `sort-fees`, etc.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Refer to the official task documentation for the complete list.
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Deployment
 
-**Use GitHub Codespaces**
+Can be hosted on GitHub Pages, Netlify, or Vercel.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/e51cd692-7b41-488f-a050-391a3f2af768) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
