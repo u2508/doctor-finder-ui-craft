@@ -6,6 +6,9 @@ interface DoctorCardProps {
 }
 
 const DoctorCard = ({ doctor }: DoctorCardProps) => {
+  // Safely handle potentially undefined specialties
+  const specialtiesText = doctor?.specialties?.join(', ') || 'No specialties listed';
+
   return (
     <div
       data-testid={`doctor-card-${doctor.id}`}
@@ -13,7 +16,7 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
     >
       <h3 className="text-lg font-semibold mb-2">{doctor.name}</h3>
       <div className="text-sm text-gray-600 mb-2">
-        {doctor.specialties.join(', ')}
+        {specialtiesText}
       </div>
       <div className="flex justify-between items-center text-sm">
         <span className="text-blue-600">₹{doctor.fees}</span>
