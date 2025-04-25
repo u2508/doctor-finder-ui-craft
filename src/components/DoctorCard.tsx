@@ -6,8 +6,10 @@ interface DoctorCardProps {
 }
 
 const DoctorCard = ({ doctor }: DoctorCardProps) => {
-  // Safely handle potentially undefined specialties
-  const specialtiesText = doctor?.specialties?.join(', ') || 'No specialties listed';
+  const specialtiesText = doctor?.specialty?.join(', ') || 'No specialties listed';
+  const consultationType = [];
+  if (doctor.video_consult) consultationType.push('Video Consult');
+  if (doctor.in_clinic) consultationType.push('In Clinic');
 
   return (
     <div
@@ -19,10 +21,11 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
         {specialtiesText}
       </div>
       <div className="flex justify-between items-center text-sm">
-        <span className="text-blue-600">₹{doctor.fees}</span>
+        <span className="text-blue-600">₹{doctor.fee}</span>
         <span className="text-gray-500">{doctor.experience}+ Years Experience</span>
       </div>
-      <div className="mt-2 text-sm text-gray-500">{doctor.consultationType}</div>
+      <div className="mt-2 text-sm text-gray-500">{consultationType.join(' & ') || 'No consultation type specified'}</div>
+      <div className="mt-2 text-sm text-gray-500">{doctor.city} - {doctor.clinic_name}</div>
     </div>
   );
 };
