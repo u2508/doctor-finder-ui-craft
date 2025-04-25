@@ -2,15 +2,10 @@
 export interface Doctor {
   id: string;
   name: string;
-  specialty: string[];
+  specialties: string[];
+  consultationType: 'Video Consult' | 'In Clinic';
   experience: number;
-  fee: number;
-  video_consult: boolean;
-  in_clinic: boolean;
-  city: string;
-  clinic_name: string;
-  photo: string | null;
-  created_at: string;
+  fees: number;
 }
 
 export type SortOption = 'fees-asc' | 'experience-desc';
